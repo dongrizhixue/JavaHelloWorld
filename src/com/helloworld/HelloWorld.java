@@ -7,7 +7,6 @@ public class HelloWorld {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("ÇëÊäÈëÔ²µÄ°ë¾¶£º");
 		scanner = new Scanner(System.in);
 		String r = scanner.next();
