@@ -4,19 +4,24 @@ import java.util.Arrays;
 
 public class HelloWorld {
 	public static void main(String[] args) {
-
-		// 创建对象，对象名为hello
 		HelloWorld hello = new HelloWorld();
+		int[] scores = { 79, 52, 98, 81 };
 
-		// 调用方法，传入两门课程的成绩
-		hello.calcAvg(94, 81);
+		// 调用方法，传入成绩数组，并获取成绩的个数
+		int count = hello.sort(scores);
+
+		System.out.println("共有" + count + "个成绩信息！");
 	}
 
 	/*
-	 * 功能：计算两门课程考试成绩的平均分并输出平均分 定义一个包含两个参数的方法，用来传入两门课程的成绩
+	 * 功能：将考试成绩排序并输出，返回成绩的个数 定义一个包含整型数组参数的方法，传入成绩数组 使用Arrays类对成绩数组进行排序并输出
+	 * 方法执行后返回数组中元素的个数
 	 */
-	public void calcAvg(float a, float b) {
-		float avg = (a + b) / 2;
-		System.out.println("平均分：" + avg);
+	public int sort(int[] scores) {
+		Arrays.sort(scores);
+		System.out.println(Arrays.toString(scores));
+
+		// 返回数组中元素的个数
+		return scores.length;
 	}
 }
