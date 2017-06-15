@@ -1,28 +1,34 @@
 package com.calc;
 
+import java.util.Arrays;
+
 public class HelloWorld {
 	public static void main(String[] args) {
 
-		// ´´½¨¶ÔÏó
+		// åˆ›å»ºå¯¹è±¡ï¼Œå¯¹è±¡åä¸ºhello
 		HelloWorld hello = new HelloWorld();
 
-		// µ÷ÓÃÎŞ²ÎµÄ·½·¨
-		hello.print();
-		// µ÷ÓÃ´øÓĞÒ»¸ö×Ö·û´®²ÎÊıµÄ·½·¨
-		hello.print("imooc");
-		// µ÷ÓÃ´øÓĞÒ»¸öÕûĞÍ²ÎÊıµÄ·½·¨
-		hello.print(18);
+		// è°ƒç”¨æ–¹æ³•å¹¶å°†è¿”å›å€¼ä¿å­˜åœ¨å˜é‡ä¸­
+		int[] nums = hello.getArray(8);
+
+		// å°†æ•°ç»„è½¬æ¢ä¸ºå­—ç¬¦ä¸²å¹¶è¾“å‡º
+		System.out.println(Arrays.toString(nums));
 	}
 
-	public void print() {
-		System.out.println("ÎŞ²ÎµÄprint·½·¨");
-	}
+	/*
+	 * åŠŸèƒ½ï¼šåˆ›å»ºæŒ‡å®šé•¿åº¦çš„intå‹æ•°ç»„ï¼Œå¹¶ç”Ÿæˆ100ä»¥å†…éšæœºæ•°ä¸ºæ•°ç»„ä¸­çš„æ¯ä¸ªå…ƒç´ èµ‹å€¼
+	 * å®šä¹‰ä¸€ä¸ªå¸¦å‚å¸¦è¿”å›å€¼çš„æ–¹æ³•ï¼Œé€šè¿‡å‚æ•°ä¼ å…¥æ•°ç»„çš„é•¿åº¦ï¼Œè¿”å›èµ‹å€¼åçš„æ•°ç»„
+	 */
+	public int[] getArray(int length) {
+		// å®šä¹‰æŒ‡å®šé•¿åº¦çš„æ•´å‹æ•°ç»„
+		int[] nums = new int[length];
 
-	public void print(String name) {
-		System.out.println("´øÓĞÒ»¸ö×Ö·û´®²ÎÊıµÄprint·½·¨£¬²ÎÊıÖµÎª£º" + name);
-	}
+		// å¾ªç¯éå†æ•°ç»„èµ‹å€¼
+		for (int i = 0; i < nums.length; i++) {
 
-	public void print(int age) {
-		System.out.println("´øÓĞÒ»¸öÕûĞÍ²ÎÊıµÄprint·½·¨£¬²ÎÊıÖµÎª£º" + age);
+			// äº§ç”Ÿä¸€ä¸ª100ä»¥å†…çš„éšæœºæ•°ï¼Œå¹¶èµ‹å€¼ç»™æ•°ç»„çš„æ¯ä¸ªæˆå‘˜
+			nums[i] = (int) (Math.random() * 100);
+		}
+		return nums; // è¿”å›èµ‹å€¼åçš„æ•°ç»„
 	}
 }
